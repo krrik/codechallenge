@@ -1,3 +1,17 @@
+testing specs for contest:
+img_name: string
+img_summary: text
+img_description: text
+
+-name must be present
+-name must be between 5 characters and less than 100 characters
+-summary must be present
+-summary must be between 10 characters and less than 150 characters
+-description must be present
+-description must between 10 characters and less than 500 characters
+-visitor_id must be present
+
+
 == README
 
 This README would normally document whatever steps are necessary to get the
