@@ -1,0 +1,27 @@
+
+<p>
+  <h1><%= @contest.img_name %></h1>
+</p>
+
+<div class = "row">
+  
+    <p>
+      <h5>Uploaded by: <%= @contest.visitor.visitorname %></h5>
+    </p>
+  
+</div>
+<div class="col-md-8">
+  <h3><%= @contest.img_summary %></h3>
+  <div class="well">
+    <p><strong>Steps:</strong></p>
+    <%= @contest.img_description %>
+    </div>
+  </div>
+</div>
+
+
+<h5>
+  <%= link_to "Return to Contests listing", contests_path, class: "btn btn-warning btn-small" %></h5>
+</h5>
+
+</div>

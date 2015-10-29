@@ -1,0 +1,25 @@
+<h1>All contests</h1>
+<hr/>
+
+<% @contests.each do |contest| %>
+  <div class="row">
+    
+      <div class="col-md-2">
+        <section class="visitor_info center">
+          
+          
+          
+        </section>
+         
+      </div>
+      
+      <div class="col-lg-8 well">
+        <h4><%= link_to contest.img_name, contest_path(contest) %></h4>
+        <p><%= contest.img_summary %></p>
+        <p>
+          <span class='quiet'><small> <%= time_ago_in_words(contest.created_at) %> ago</small></span>
+        </p>
+      </div>
+  </div>
+  <hr/>
+<% end %>
