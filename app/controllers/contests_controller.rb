@@ -1,7 +1,7 @@
 class ContestsController < ApplicationController
   
   def index
-    @contests = Contest.all
+    @contests = Contest.paginate(page: params[:page], per_page: 4)
   end
   
   def show
@@ -41,6 +41,17 @@ class ContestsController < ApplicationController
     end
   end
   
+  def like
+    @contest = Contest.find(params[:id])
+    like = Like.create(like: params[:like], visitor: Visitor.first, contest: @contest)
+    if like.valid?
+       flash[:success] = "Your selection was successful"
+       redirect_to :back
+    else
+      flash[:danger] = "You can like/dislike an image only once"
+      redirect_to :back
+    end
+  end
     
   private
   

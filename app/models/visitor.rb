@@ -1,5 +1,6 @@
 class Visitor < ActiveRecord::Base
   has_many :contests
+  has_many :likes
   before_save { self.email = email.downcase }
   validates :visitorname, presence: true, length: {minimum: 3, maximum: 40}
 

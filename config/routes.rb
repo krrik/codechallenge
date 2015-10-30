@@ -12,6 +12,11 @@ Rails.application.routes.draw do
   # get 'contests/:id', to: 'contests#show', as: 'contest'
   # delete 'contests/:id', to: 'contests#destroy'
   
-  resources :contests
-  
+  resources :contests do
+    member do
+      post 'like' 
+    end
+    
+  end
+
 end

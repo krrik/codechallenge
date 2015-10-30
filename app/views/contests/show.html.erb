@@ -15,6 +15,14 @@
   </div>
   <div class="well">
     <%= simple_format(@contest.img_description) %>
+    <div class="pull-right">
+      <%= link_to like_contest_path(@contest, like: true), method: :post do %>
+        <i class="glyphicon glyphicon-thumbs-up"></i> &nbsp <%= @contest.thumbs_up_total %>
+      <% end %> &nbsp&nbsp&nbsp&nbsp
+      <%= link_to like_contest_path(@contest, like: false), method: :post do %>
+        <i class="glyphicon glyphicon-thumbs-down"></i> &nbsp <%= @contest.thumbs_down_total %>
+      <% end %>
+    </div>
     </div>
   </div>
 </div>
