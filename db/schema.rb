@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151030060305) do
+ActiveRecord::Schema.define(version: 20151030081256) do
 
   create_table "contests", force: :cascade do |t|
     t.string   "img_name"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20151030060305) do
     t.integer  "zip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "password_digest"
   end
 
 end

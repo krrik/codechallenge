@@ -1,0 +1,30 @@
+<%= render 'shared/errors', obj: @visitor %>
+
+<div class="row">
+  <div class="well col-md-8 col-md-offset-2">
+    <%= form_for @visitor do |f| %>
+       <%= f.label :Name %>
+       <%= f.text_field :visitorname %>
+       
+       <%= f.label :Email %>
+       <%= f.email_field :email %>
+       
+       <%= f.label :Password %>
+       <%= f.password_field :password %>
+       
+       <%= f.label :Mailing_Address  %>
+       <%= f.text_area :mail, rows: 2 %>
+       
+       
+       <%= f.label :Phone %>
+       <%= f.text_field :phone %>
+       
+       
+       <%= f.label :Zip %>
+       <%= f.text_field :zip %>
+
+       
+       <%= f.submit(@visitor.new_record? ? 'Register' : 'Edit Profile', class: "btn btn-success") %>
+      <% end %>
+  </div>
+</div>

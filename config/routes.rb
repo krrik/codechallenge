@@ -16,7 +16,10 @@ Rails.application.routes.draw do
     member do
       post 'like' 
     end
-    
   end
+  
+  resources :visitors, except: [:new]
+  
+  get '/register', to: 'visitors#new'
 
 end
