@@ -10,6 +10,9 @@
 <div class="col-md-8">
   <%= link_to "Edit image", edit_contest_path(@contest), class: "btn btn-success pull-right" %>
   <h3><%= @contest.img_summary %></h3>
+  <div class="show_contest">
+    <%= image_tag(@contest.picture.url) if @contest.picture? %> 
+  </div>
   <div class="well">
     <%= simple_format(@contest.img_description) %>
     </div>

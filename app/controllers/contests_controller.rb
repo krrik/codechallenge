@@ -45,7 +45,7 @@ class ContestsController < ApplicationController
   private
   
      def contest_params
-       params.require(:contest).permit(:img_name, :img_summary, :img_description)
+       params.require(:contest).permit(:img_name, :img_summary, :img_description, :picture)
      end
     
 end

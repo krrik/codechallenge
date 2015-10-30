@@ -7,17 +7,20 @@
         <section class="visitor_info center">
           
           
-          
+            
         </section>
          
       </div>
       
-      <div class="col-lg-8 well">
+      <div class="col-lg-6 well">
         <h4><%= link_to contest.img_name, contest_path(contest) %></h4>
         <p><%= contest.img_summary %></p>
         <p>
           <span class='quiet'><small> <%= time_ago_in_words(contest.created_at) %> ago</small></span>
         </p>
+      </div>
+      <div class="col-md-4">
+        <%= image_tag(contest.picture.url, size: "250x150", class: "gravatar") if contest.picture? %>
       </div>
   </div>
   <hr/>
