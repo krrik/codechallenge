@@ -1,0 +1,22 @@
+<%= render 'shared/errors', obj: @contest %>
+
+<div class="row">
+  <div class="well col-md-8 col-md-offset-2">
+    <%= form_for @contest do |f| %>
+       <%= f.label :img_name %>
+       <%= f.text_field :img_name %>
+       
+       <%= f.label :img_summary %>
+       <%= f.text_field :img_summary %>
+       
+       
+       
+       <%= f.label :img_description %>
+       <%= f.text_area :img_description, rows: 5 %>
+       
+       <%= f.submit(@contest.new_record? ? 'Upload New Image' : 'Edit Image', class: "btn btn-success") %>
+      <% end %>
+       
+    
+  </div>
+</div>

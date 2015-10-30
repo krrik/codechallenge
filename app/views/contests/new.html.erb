@@ -1,21 +1,3 @@
-<p>
-  <h2>Upload your favorite pink panther image</h2>
-  <hr/>
-</p>
+<%= render 'shared/page_title', title: "Upload a new Image" %>
 
-<div class="row">
-  <div class="well col-md-8 col-md-offset-2">
-    <%= form_for @contest do |f| %>
-       <%= f.label :img_name %>
-       <%= f.text_field :img_name %>
-       
-       
-       <%= f.label :img_description %>
-       <%= f.text_area :img_description, rows: 5 %>
-       
-       <%= f.submit 'Submit image', class: "btn btn-success" %>
-      <% end %>
-       
-    
-  </div>
-</div>
+<%= render 'form' %>

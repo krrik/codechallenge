@@ -15,24 +15,37 @@ class ContestsController < ApplicationController
   end
   
   def create
-    begin
     @contest = Contest.new(contest_params)
-    @contest.visitor = Visitor.find(2)
-  
+    @contest.visitor = Visitor.find(1)
+    
     if @contest.save
-      flash[:success] = "Your pink panther image is uploaded successfully!"
+      flash[:success] = "Your image is uploaded succesfully"
       redirect_to contests_path
     else
       render :new
     end
+  end
+ 
+  def edit
+    @contest = Contest.find(params[:id])
+  end
+  
+  def update
+    @contest = Contest.find(params[:id])
+    if @contest.update(contest_params)
+      #do something
+      flash[:success] = "Your edited image was updated succesfully"
+      redirect_to contests_path(@contest)
+    else
+      render :edit
     end
   end
   
     
   private
   
-    def contest_params
-      params.require(:contest).permit(:img_name, :img_description)
-    end
+     def contest_params
+       params.require(:contest).permit(:img_name, :img_summary, :img_description)
+     end
     
 end
